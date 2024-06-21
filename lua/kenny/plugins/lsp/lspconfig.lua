@@ -22,13 +22,13 @@ return { -- LSP Configuration & Plugins
 				map("<leader>gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				map("<leader>gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 				map("<leader>gt", require("telescope.builtin").lsp_type_definitions, "[T]ype Definition")
-				map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Document [S]ymbols")
+				map("<leader>lw", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace Symbols")
+				map("<leader>lr", vim.lsp.buf.rename, "[R]ename")
 
 				-- Execute a code action, usually your cursor needs to be on top of an error
 				-- or a suggestion from your LSP for this to activate.
-				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+				map("<leader>la", vim.lsp.buf.code_action, "Code [A]ction")
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
 
 				-- The following two autocommands are used to highlight references of the
@@ -65,9 +65,9 @@ return { -- LSP Configuration & Plugins
 				--
 				-- This may be unwanted, since they displace some of your code
 				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-					map("<leader>th", function()
+					map("<leader>lh", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-					end, "[T]oggle Inlay [H]ints")
+					end, "Toggle Inlay [H]ints")
 				end
 			end,
 		})
