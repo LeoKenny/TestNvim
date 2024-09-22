@@ -6,8 +6,6 @@ return {
 
 		lint.linters_by_ft = {
 			python = { "pylint" },
-			c = { "clangd" },
-			cpp = { "clangd" },
 		}
 
 		-- Set pylint to work in virtualenv
