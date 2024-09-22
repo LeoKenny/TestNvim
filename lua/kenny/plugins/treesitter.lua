@@ -8,12 +8,11 @@ return {
 	ensure_installed = { "bash", "c", "diff", "lua", "luadoc", "markdown", "vim", "vimdoc", "python", "cpp" },
 	auto_install = true,
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
-
-		treesitter.setup({ -- enable syntax highlighting
+		require("nvim-treesitter.configs").setup({
 			highlight = { enable = true },
 			indent = { enable = true },
 			autotag = { enable = true },
+
 			ensure_installed = {
 				"arduino",
 				"bash",
@@ -34,6 +33,7 @@ return {
 				"vim",
 				"yaml",
 			},
+
 			incremental_selection = {
 				enable = true,
 				keymaps = {

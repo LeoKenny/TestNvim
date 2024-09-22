@@ -39,6 +39,7 @@ return {
 				"isort",
 				"black",
 				"pylint",
+				"clang-format",
 			},
 		})
 	end,
