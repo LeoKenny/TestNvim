@@ -5,16 +5,17 @@ return {
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
-	ensure_installed = { "bash", "c", "diff", "lua", "luadoc", "markdown", "vim", "vimdoc", "python", "cpp" },
+	ensure_installed = { "bash", "c", "cpp", "diff", "lua", "luadoc", "markdown", "vim", "vimdoc", "python" },
 	auto_install = true,
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			highlight = { enable = true },
 			indent = { enable = true },
 			autotag = { enable = true },
+			sync_install = false,
+			auto_install = false,
 
 			ensure_installed = {
-				"arduino",
 				"bash",
 				"c",
 				"cmake",
@@ -25,11 +26,13 @@ return {
 				"go",
 				"html",
 				"lua",
+				"luadoc",
 				"markdown",
 				"markdown_inline",
 				"python",
 				"regex",
 				"toml",
+				"vimdoc",
 				"vim",
 				"yaml",
 			},
@@ -40,7 +43,7 @@ return {
 					init_selection = "<C-space>",
 					node_incremental = "<C-space>",
 					scope_incremental = false,
-					node_decremental = "<bs>",
+					node_decremental = "<BS>",
 				},
 			},
 		})
