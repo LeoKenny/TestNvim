@@ -25,6 +25,10 @@ return {
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
 
+		vim.keymap.set("n", "<leader>lv", function()
+			vim.lsp.buf.hover()
+		end, { desc = "Visualize variable type" })
+
 		vim.keymap.set("n", "<leader>ld", function()
 			vim.diagnostic.open_float()
 		end, { desc = "Show diagnostics in a floating window" })
